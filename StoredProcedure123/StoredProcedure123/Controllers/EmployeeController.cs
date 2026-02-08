@@ -83,6 +83,7 @@ namespace StoredProcedure123.Controllers
                     SqlParameter("@LastName", lastName);
                     cmd.Parameters.Add(param);
                 }
+
                 if (!string.IsNullOrEmpty(gender))
                 {
                     sbCommand.Append(" AND Gender=@Gender");
@@ -90,6 +91,7 @@ namespace StoredProcedure123.Controllers
                     SqlParameter("@Gender", gender);
                     cmd.Parameters.Add(param);
                 }
+
                 if (salary != 0)
                 {
                     sbCommand.Append(" AND Salary=@Salary");
@@ -97,6 +99,7 @@ namespace StoredProcedure123.Controllers
                     SqlParameter("@Salary", salary);
                     cmd.Parameters.Add(param);
                 }
+
                 cmd.CommandText = sbCommand.ToString();
                 cmd.CommandType = System.Data.CommandType.Text;
                 con.Open();

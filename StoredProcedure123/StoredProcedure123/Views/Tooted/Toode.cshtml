@@ -1,0 +1,33 @@
+﻿﻿@model List<StoredProcedure123.Models.Tooted>
+
+@{
+    ViewData["Title"] = "Tooted";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Tooted</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Kategooria</th>
+                <th>Hind (€)</th>
+                <th>Laoseis</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var toode in Model)
+            {
+                <tr>
+                    <td>@toode.Id</td>
+                    <td>@toode.Name</td>
+                    <td>@toode.Kategooria</td>
+                    <td>@toode.Hind.ToString("F2")</td>
+                    <td>@toode.Laoseis</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
